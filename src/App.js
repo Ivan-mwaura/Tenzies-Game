@@ -26,12 +26,17 @@ function App(){
   }
 
   function rollDice (){
-    setDice(oldDice => oldDice.map(die =>{
-      return(
-        die.isheld ? die: generateNewDie()
-      )
-    }))
-  }
+    if(!tenzies){
+       setDice(oldDice => oldDice.map(die =>{
+          return(
+            die.isheld ? die: generateNewDie()
+          )
+        }))
+        }else{
+          setTenzies(false)
+          setDice(allDice())
+        }
+    }
 
   function holdDice(id){
     setDice(oldDice => oldDice.map(die => {
@@ -69,8 +74,8 @@ React.useEffect( () => {
       <div>
         <h1 className="title">Tenzies</h1>
           <p className="instructions">
-            Click on the dice to hold them.Roll until all dice are the same.
-            Click each die to freeze it at its current value between rolls.
+            <b>Click on the dice to hold them.Roll until all dice are the same.
+            Click each die to freeze it at its current value between rolls.</b>
           </p>
          </div>
         <div className="dice-container">
