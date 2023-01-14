@@ -83,7 +83,10 @@ React.useEffect( () => {
         </div>
         <div className="button--div">
               <button className="roll--button" onClick={rollDice}>{tenzies ? "New Game" : "Roll"}</button>
-          </div>
+        </div>
+        <div className="footer">
+          <pre><i>&copy;copyright of Evans Mwaura</i></pre>
+        </div>
     </main>
   </section>
   )
