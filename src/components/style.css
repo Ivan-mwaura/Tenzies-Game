@@ -172,6 +172,9 @@ main {
 }
 .footer{
     font-family: 'karla', sans-serif;
+    font-size: 14px;
+    font-weight: 10px;
+    color: #0B2434;
 
 }
 .message--win{
