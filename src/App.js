@@ -13,10 +13,10 @@ function App(){
   const  { time, start, pause, reset} = useTimer(
     {
       endTime : 0,
-      initialTime: 20,
+      initialTime: 25,
       timerType:"DECREMENTAL",
       onTimeOver:()=>{
-        return (allDice())
+        return time
       }
     }
 
@@ -40,7 +40,7 @@ function App(){
     )
   }
   function rollDice (){
-    if(!tenzies ){
+    if(!tenzies && time > 0){
        setDice(oldDice => oldDice.map(die =>{
           return(
             die.isheld ? die: generateNewDie()
@@ -66,6 +66,7 @@ React.useEffect( () => {
     const allSame = dices.every(die => die.value === firstValue)
     if(allHeld && allSame ){
       setTenzies(true)
+      
     }
     else{
       setTenzies(false)
@@ -90,21 +91,21 @@ React.useEffect( () => {
       
       {/*{tenzies && <Confetti />}*/}
       {tenzies && <Confetti/>}
-      {tenzies && <div className="message" ><h2>You Won the Game the Game</h2></div> }
-   
-      <div>
-        <h1 className="title">Tenzies</h1>
+      {tenzies && <div className="message--win" ><h2>You Won the Game the Game</h2></div> }
+      {time === 0 && !tenzies ? <div className="message--loose"><h2>You lost the game</h2></div> : " " }
+        <div>
+          <h1 className="title">Tenzies Dice</h1>
           <p className="instructions">
-            <b>Click on the dice to hold them.Roll until all dice are the same.
+            <b><i>Click on the dice to hold them.Click  start to start count Down .Roll until all dice are the same.
             Click each die to freeze it at its current value between rolls. 
-            Test your speed in the 20 seconds </b>
+            Test your speed in  25 seconds .After win click start then click new game</i></b>
           </p>
          </div>
         <div className="dice-container">
             {MapDice} 
         </div>
         <div className="button--div">
-              <button className="roll--button" onClick={rollDice}>{tenzies ? "New Game" : "Roll"}</button>
+              <button className="roll--button" onClick={rollDice}>{!tenzies && time > 0 ? "Roll" : "New Game"}</button>
         </div>
         
         <div className="timerDisplay" >

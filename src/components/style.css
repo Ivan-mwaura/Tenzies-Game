@@ -10,11 +10,11 @@ body {
 section{
     display: flex;
     justify-content: center;
-    padding-top: 0px;
+    
 }
 main {
     background-color: #F5F5F5;
-    height: 700px;
+    height: 740px;
     max-width: 800px;
     border-radius: 5px;
     padding: 20px;
@@ -140,28 +140,28 @@ main {
     letter-spacing: 2px;
     border: none;
 }
-/*.finish--game{
-    background:blueviolet;
-    border-radius: 3.81277px;
-    font-family: 'Karla', sans-serif;
-    width: 110px;
-    height: 45px;
-    padding: 3px;
-    font-size: 18px;
-    color: #F5F5F5;
-    letter-spacing: 2px;
-    border: none;
-}*/
+
 .roll--button:active {
     box-shadow: inset 5px 5px 10px -3px rgba(0, 0, 0, 0.7);
 }
 .title {
     font-size: 50px;
     margin: 0;
-    text-align: center;
+   
     font-family: 'Karla', sans-serif;
-    color: forestgreen;
-
+    color: rgb(16, 108, 161);
+    display: flex;
+    justify-content: center;
+    text-shadow:
+        2px 2px 0 #000,
+        -2px -2px 0 #000,
+        2px -2px 0 #000,
+        -2px 2px 0 #000,
+        0 2px 0 #000,
+        2px 0 0 #000,
+        0 -2px 0 #000,
+        -2px 0 0 #000,
+        2px 2px 5px #000;
 }
 
 .instructions {
@@ -174,13 +174,25 @@ main {
     font-family: 'karla', sans-serif;
 
 }
-.message{
+.message--win{
     background-color: green;
   color: white;
   text-align: center;
   position: absolute;
   top: 50%;
   left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 20px;
+}
+.message--loose{
+    background-color: red;
+  color: white;
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 30%;
+  height:15%;
   transform: translate(-50%, -50%);
   padding: 20px;
 }
@@ -223,4 +235,8 @@ main {
   }
   .buttons button:nth-last-child(1){
     background-color: #20b380;
+  }
+  .dice--image{
+    width:100px;
+    
   }
