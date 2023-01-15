@@ -1,7 +1,10 @@
 import React from 'react'
 import "../components/style.css"
 
+
  function Game(props){
+ 
+  
     
     const styles = {
         backgroundColor : props.isheld ? "#59E391" : "white"
@@ -78,7 +81,5 @@ import "../components/style.css"
     return(
        currentDice
     )
-      
-   
  }
  export default Game;

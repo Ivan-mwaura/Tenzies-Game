@@ -4,9 +4,22 @@ import "./components/style.css"
 import {nanoid} from "nanoid"
 import Confetti from "react-confetti"
 import { useTimer } from 'use-timer'
+import UsewindowWidth from "./components/useWindowSize";
 
 
 function App(){
+
+  const width = UsewindowWidth
+  let classes = 'default'
+
+  if (width < 600) {
+    classes = 'mobile';
+  } else if (width >= 600 && width < 1024) {
+    classes = 'tablet';
+  } else {
+    classes = 'desktop';
+  }
+  
   
   const[dices, setDice] = React.useState(allDice());
   const[tenzies, setTenzies] = React.useState(false);
@@ -75,6 +88,7 @@ React.useEffect( () => {
 
   
   const MapDice = dices.map(dice => {
+    console.log(dice.id)
     return <Game
             id = {dice.id} 
             value = {dice.value}
@@ -86,8 +100,8 @@ React.useEffect( () => {
  
 
   return (
-  <section>
-    <main>
+  <section className={classes}>
+    <main className={classes}>
       
       {/*{tenzies && <Confetti />}*/}
       {tenzies && <Confetti/>}
