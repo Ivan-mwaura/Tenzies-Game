@@ -115,6 +115,7 @@ React.useEffect( () => {
             Test your speed in  25 seconds .After win click start then click new game</i></b>
           </p>
          </div>
+         
         <div className="dice-container">
             {MapDice} 
         </div>

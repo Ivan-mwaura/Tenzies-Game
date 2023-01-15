@@ -4,8 +4,6 @@ import "../components/style.css"
 
  function Game(props){
  
-  
-    
     const styles = {
         backgroundColor : props.isheld ? "#59E391" : "white"
     }

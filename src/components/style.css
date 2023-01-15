@@ -24,12 +24,13 @@ main {
     align-items: center;
     
 }
-
 .dice-container {
     display: grid;
     grid-template: auto auto / repeat(5, 1fr);
+    /*grid-template-columns: auto auto auto auto auto;*/
     gap: 20px;
 }
+
 
 /*.die-face {
     height: 100px;
@@ -241,4 +242,20 @@ main {
   .dice--image{
     width:100px;
     
+  }
+
+  @media only screen and (max-width: 45em) {
+    nav {
+      margin-bottom: 2rem;
+    }
+    section {
+      flex-direction: column;
+      padding-left: 2.4rem;
+      padding-right: 2.4rem;
+    }
+  
+    main {
+      padding-left:1rem;
+      padding-right:1rem;
+    }
   }
