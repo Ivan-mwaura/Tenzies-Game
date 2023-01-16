@@ -128,7 +128,7 @@ React.useEffect( () => {
         </div>
         
         <div className="timerDisplay" >
-          <span>Time : {time} secs:</span>
+          <span>Time : {time} secs</span>
          
         </div>
         <div className="buttons">
