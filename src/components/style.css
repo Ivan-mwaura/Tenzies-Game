@@ -243,11 +243,11 @@ main {
     body{
       margin: 0;
       background-color: #0B2434;
-      padding: 20px;
     }
     section{
         display: flex;
         justify-content: center;
+       
        
     }
     main{
@@ -256,12 +256,13 @@ main {
       padding: 5px;
       background-color: #F5F5F5;
       border-radius: 5px;
+    
     }
     .dice-container{
      
         display: grid;
-        grid-template: auto auto / repeat(5, 1fr);
-        /*grid-template-columns: auto auto auto auto auto;*/
+        /*grid-template: auto auto / repeat(5, 1fr);*/
+        grid-template-columns: auto auto auto auto ;
         grid-gap: 1px;
         
      
