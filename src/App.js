@@ -28,11 +28,10 @@ function App(){
       endTime : 0,
       initialTime: 25,
       timerType:"DECREMENTAL",
+      autostart:true,
       onTimeOver:()=>{
         return(
-          () => {
-            allDice()
-          }
+          time
         )
       }
     }
@@ -66,6 +65,7 @@ function App(){
         }else{
           setTenzies(false)
           setDice(allDice())
+          reset()
         }
     }
 
@@ -124,7 +124,7 @@ React.useEffect( () => {
             {MapDice} 
         </div>
         <div className="button--div">
-              <button className="roll--button" onClick={rollDice}>{!tenzies && time > 0 ? "Roll" : "New Game"}</button>
+              <button className="roll--button" onClick={rollDice }>{!tenzies && time > 0 ? "Roll" : "New Game"}</button>
         </div>
         
         <div className="timerDisplay" >
