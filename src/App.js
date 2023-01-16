@@ -105,11 +105,12 @@ React.useEffect( () => {
 
   return (
   <section >
+    {tenzies && <Confetti/>}
     <main >
       
       {/*{tenzies && <Confetti />}*/}
-      {tenzies && <Confetti/>}
-      {tenzies && <div className="message--win" ><h2>You Won the Game the Game</h2></div> }
+      
+      {tenzies && <div className="message--win" ><h2>You Won the Game </h2></div> }
       {time === 0 && !tenzies ? <div className="message--loose"><h2>You lost the game</h2></div> : " " }
         <div>
           <h1 className="title">Tenzies Dice</h1>
