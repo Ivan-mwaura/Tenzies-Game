@@ -4,12 +4,12 @@ import "./components/style.css"
 import {nanoid} from "nanoid"
 import Confetti from "react-confetti"
 import { useTimer } from 'use-timer'
-import UsewindowWidth from "./components/useWindowSize";
+/*import UsewindowWidth from "./components/useWindowSize";*/
 
 
 function App(){
 
-  const width = UsewindowWidth
+ /* const width = UsewindowWidth
   let classes = 'default'
 
   if (width < 600) {
@@ -17,8 +17,8 @@ function App(){
   } else if (width >= 600 && width < 1024) {
     classes = 'tablet';
   } else {
-    classes = 'desktop';
-  }
+    classes = 'desktop'
+  }*/
   
   
   const[dices, setDice] = React.useState(allDice());
@@ -29,7 +29,11 @@ function App(){
       initialTime: 25,
       timerType:"DECREMENTAL",
       onTimeOver:()=>{
-        return time
+        return(
+          () => {
+            allDice()
+          }
+        )
       }
     }
 
@@ -100,8 +104,8 @@ React.useEffect( () => {
  
 
   return (
-  <section className={classes}>
-    <main className={classes}>
+  <section >
+    <main >
       
       {/*{tenzies && <Confetti />}*/}
       {tenzies && <Confetti/>}
